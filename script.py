@@ -73,9 +73,9 @@ def rockpaperscissors():
         if result == "DRAW":
             print("<== It´s a tie! ==>")
         elif result == choice_name:
-            print("<== Congratulation you have won! ==>")
+            print("<== You won! ==>")
         else:
-            print("<== Sorry you have lost this time! ==>")
+            print("<== You lose! ==>")
 
         #Ask if the user wants to play again
         print(" ")
