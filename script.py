@@ -16,7 +16,7 @@
 # TIC-TAC-TOE
 # Function to print the board
 
-def print_board3(v = (' ',)*9):
+def print_board(v = (' ',)*9):
 
     ttt = f"""
          |     |     
@@ -32,7 +32,7 @@ def print_board3(v = (' ',)*9):
     """
     print(ttt)
 
-print_board3()
+print_board()
 
 # Function to check the winner
 
