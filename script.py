@@ -4,6 +4,7 @@
 # PAPER, ROCK, SCISSORS
 
 
+
 # After coming out of the while loop, print thanks for playing
 
 
@@ -56,13 +57,27 @@ def tic_tac_toe():
             print("Invalid input. Please enter a number.")
             continue
         
-        
+
         # execute a move
         board[move] = current_player
         turns += 1
         
         # Switch player
         current_player = 'O' if current_player == 'X' else 'X'
+    
+    # Ask if the user wants to play again
+        print(" ")
+        while True:
+            print("Are you ready to play again...! (Y/N)")
+            ans = input().lower()
+            if ans == "y":
+                tic_tac_toe()
+                break
+            elif ans == "n":
+                print("Thanks for playing!")
+                break
+            else:
+                print("Invalid input! Please enter Y or N")
 
 if __name__ == "__main__":
     tic_tac_toe()
