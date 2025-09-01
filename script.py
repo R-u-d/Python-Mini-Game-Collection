@@ -31,7 +31,7 @@ def print_board(v = (' ',)*9):
 print_board()
 
 
-    #####
+   
     def check_win(board, player):
         """Checks if the current player has won."""
         win_conditions = [
@@ -70,7 +70,7 @@ print_board()
         game_over = False
         moves_count = 0
 
-        #####
+        
         while not game_over:
             print_board(board)
             position = get_player_move(board, current_player)
