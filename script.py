@@ -47,6 +47,7 @@ def tic_tac_toe():
             print("Invalid input. Please enter a number.")
             continue
         
+        
         # execute a move
         board[move] = current_player
         turns += 1
