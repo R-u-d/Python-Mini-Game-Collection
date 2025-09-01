@@ -9,11 +9,9 @@ import random
 
 # PAPER, ROCK, SCISSORS
 import random
-import colorama import Fore, Back, Style
-init(wrap=False)
 
 def rockpaperscissors():    
-    print(Fore.Magenta + "...:::| ROCK, PAPER, SCISSORS |:::...\n")        
+    print("...:::| ROCK, PAPER, SCISSORS |:::...\n")        
     print('Winning rules of the game ROCK PAPER SCISSORS are:\n'
       + "Rock vs Paper -> Paper wins \n"
       + "Rock vs Scissors -> Rock wins \n"
@@ -115,16 +113,6 @@ rockpaperscissors()
 
 
 # Function to run fo the actual tic-tac-toe game where your other functions will be used
-def check_win(board, player):
-    win_conditions = [
-        (0, 1, 2), (3, 4, 5), (6, 7, 8),  # Horizontal Rows
-        (0, 3, 6), (1, 4, 7), (2, 5, 8),  # Vertikale Columns
-        (0, 4, 8), (2, 4, 6)             # Diagonals
-    ]
-    for condition in win_conditions:
-        if board[condition[0]] == board[condition[1]] == board[condition[2]] == player:
-            return True
-    return False
 
 def tic_tac_toe():
     board = [' '] * 9
