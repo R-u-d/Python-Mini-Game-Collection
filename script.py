@@ -9,9 +9,11 @@ import random
 
 # PAPER, ROCK, SCISSORS
 import random
+import colorama import Fore, Back, Style
+init(wrap=False)
 
 def rockpaperscissors():    
-    print("...:::| ROCK, PAPER, SCISSORS |:::...\n")        
+    print(Fore.Magenta + "...:::| ROCK, PAPER, SCISSORS |:::...\n")        
     print('Winning rules of the game ROCK PAPER SCISSORS are:\n'
       + "Rock vs Paper -> Paper wins \n"
       + "Rock vs Scissors -> Rock wins \n"
