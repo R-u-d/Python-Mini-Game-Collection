@@ -10,13 +10,13 @@ import random
 # PAPER, ROCK, SCISSORS
 import random
 
-print("<-------ROCK------PAPER------SCISSORS------GAME------>")
-print('Winning rules of the game ROCK PAPER SCISSORS are:\n'
+def rockpaperscissors():    
+    print("...:::| ROCK, PAPER, SCISSORS |:::...\n")        
+    print('Winning rules of the game ROCK PAPER SCISSORS are:\n'
       + "Rock vs Paper -> Paper wins \n"
       + "Rock vs Scissors -> Rock wins \n"
       + "Paper vs Scissors -> Scissors wins \n")
-
-def rockpaperscissors():
+    
     while True:
         print("Enter your choice \n 1 - Rock \n 2 - Paper \n 3 - Scissors \n")
 
@@ -85,14 +85,23 @@ def rockpaperscissors():
             continue
         if ans == "n":
             break
-        ans
-rockpaperscissors()
-# After coming out of the while loop, print thanks for playing
-print()
-print("(<== Thanks for playing ==>)")
-print("See you Again!")
-print("<------------THE END-------------->")
+        
+        while ans != "y" and ans != "n":
+            print("Invalid input! Please enter Y or N")
+            ans = input().lower()
+            if ans == "y":
+                continue
+            elif ans == "n":
+                break
+        if ans == "n":
+            break
 
+# After coming out of the while loop, print thanks for playing
+    print()
+    print("(<== Thanks for playing ==>)")
+    print("See you Again!")
+    print("<------------THE END-------------->")
+rockpaperscissors()
 
 # TIC-TAC-TOE
 # Function to print the board
@@ -104,7 +113,49 @@ print("<------------THE END-------------->")
 
 
 # Function to run fo the actual tic-tac-toe game where your other functions will be used
+def check_win(board, player):
+    win_conditions = [
+        (0, 1, 2), (3, 4, 5), (6, 7, 8),  # Horizontal Rows
+        (0, 3, 6), (1, 4, 7), (2, 5, 8),  # Vertikale Columns
+        (0, 4, 8), (2, 4, 6)             # Diagonals
+    ]
+    for condition in win_conditions:
+        if board[condition[0]] == board[condition[1]] == board[condition[2]] == player:
+            return True
+    return False
 
+def tic_tac_toe():
+    board = [' '] * 9
+    current_player = 'X'
+    turns = 0
+
+    print(" Welcome to Tic Tac Toe Game!")
+    
+    while True:
+        print_board(board)
+        
+        # Player Input
+        try:
+            move = int(input(f"Player '{current_player}', choose a position (1-9): ")) - 1
+            if move < 0 or move > 8:
+                print("Invalid input. Please enter a number between 1 and 9.")
+                continue
+            if board[move] != ' ':
+                print("Position already taken. Try again.")
+                continue
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
+        
+        # execute a move
+        board[move] = current_player
+        turns += 1
+        
+        # Switch player
+        current_player = 'O' if current_player == 'X' else 'X'
+
+if __name__ == "__main__":
+    tic_tac_toe()
    
 
 # MENU SYSTEM
